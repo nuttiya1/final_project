@@ -1,0 +1,10 @@
+.form-find {
+    height: 16%;
+    position: fixed;
+    margin-top: 0.2cm;
+    margin-left: -0.8cm;
+    z-index: 300;
+    white-space: nowrap;
+
+}
+
