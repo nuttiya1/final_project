@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
@@ -9,7 +10,9 @@ import MapKra from './components/Map/MapKra';
 import MapBang from './components/Map/MapBang';
 import { Button, Label, FormGroup, Input, Form } from 'reactstrap';
 
-class App extends Component {
+const url="http://127.0.0.1:5000/road_jf";
+
+class App extends React.Component {
   // state = {
   //   sideDrawerOpen: false
   // }
@@ -17,19 +20,34 @@ class App extends Component {
     super(props);
     this.state = {location: '',
                   time: '',
-                  showMaps: <MapDefault />};
+                  showMaps: '',
+                  status: null};
     this.handleChangeLocation = this.handleChangeLocation.bind(this);
     this.handleChangeTime = this.handleChangeTime.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loadtime = 0; // test
   }
-
+  
+  componentDidMount () {
+    Axios.get(url)
+      .then(res => {
+        const rrrr = res.data;
+        console.log(rrrr["219+00638"][22021][1])
+        this.setState({status: rrrr["219+00638"][22021][1]})
+        
+      })
+      .catch(error => {
+        console.log('Oops...')
+      })
+  }
+  
+  
   handleChangeLocation(event){
     this.setState({location: event.target.value});
   }
 
   handleChangeTime(event){
     this.setState({time: event.target.value});
-    
   }
 
   handleSubmit(event){
@@ -62,23 +80,24 @@ class App extends Component {
 
   render() {
     // let backdrop;    
-    let form = 'form-find';
 
     // if (this.state.sideDrawerOpen == true){
     //   backdrop = <Backdrop click={this.backdropClickHandler}/>;
     // }
+
+    let form = 'form-find';
+
     return (
       <div style={{height: '100%'}}>
-        <Toolbar />
+        {/* <Toolbar /> */}
         {/* <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
         <SideDrawer show={this.state.sideDrawerOpen} />        
         {backdrop} */}
         <main style={{marginTop: '61px'}} >
-          <nav className={form}>
+          {/* <nav className={form}>
             <ul>
             <div>
               <Form onSubmit={this.handleSubmit}>
-                {/* <Input size="lg" type="text" value={this.state.location} onChange={this.handleChangeLocation} placeholder="ค้นหาสถานที่" /> */}
                 <FormGroup size="lg">
                 <Input size="lg" type="select" onChange={this.handleChangeLocation}>
                   <option value="" >เลือกจุดหมาย</option>
@@ -102,10 +121,10 @@ class App extends Component {
               </Form>
             </div>
             </ul>
-          </nav>
-
+          </nav> */}
           {this.state.showMaps}
           
+          {/* {this.state.status} */}
         </main>
       </div>
     );
