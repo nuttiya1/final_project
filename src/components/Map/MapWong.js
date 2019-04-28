@@ -14,11 +14,18 @@ const MyMapComponent = compose(
     mapElement: <div style={{ height: `100%` }} />
   }),
   withStateHandlers(() => ({
-    isOpen: false,
+    isOpen1: true,
     isOpen2: true,
+    isOpen3: true
   }), {
-    onToggleOpen: ({ isOpen }) => () => ({
-      isOpen: !isOpen
+    onToggleOpen1: ({ isOpen1 }) => () => ({
+      isOpen1: !isOpen1
+    }),
+    onToggleOpen2: ({ isOpen2 }) => () => ({
+      isOpen2: !isOpen2
+    }),
+    onToggleOpen3: ({ isOpen3 }) => () => ({
+      isOpen3: !isOpen3
     })
   }),
   withScriptjs,
@@ -27,15 +34,24 @@ const MyMapComponent = compose(
   
   <GoogleMap defaultZoom={15} defaultCenter={{ lat: 13.8228455, lng: 100.5138012 }}>
 
-    <Marker position={{ lat: 13.818851, lng: 100.5138 }} >
-      {props.isOpen2 && <InfoWindow >
-        <h3>{show_time}</h3>
+    <Marker position={{ lat: 13.818851, lng: 100.5138 }} onClick={props.onToggleOpen1}>
+      {props.isOpen1 && <InfoWindow >
+        <p> มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ </p>
       </InfoWindow>}
     </Marker>
-    <Marker position={{ lat: 13.82972, lng: 100.5266 }} />
-    //
-    {/* dic = {"roadname": [path, color], "roadname2" : [path2, color2]} */}
-    {/* <Polyline 
+    <Marker defaultVisible={false} position={{ lat: 13.822809, lng: 100.522328 }} onClick={props.onToggleOpen2}>
+      {props.isOpen2 && <InfoWindow >
+        <p> {show_time} นาที </p>
+      </InfoWindow>}
+    </Marker>
+    <Marker position={{ lat: 13.82972, lng: 100.5266 }} onClick={props.onToggleOpen3}>
+    {props.isOpen3 && <InfoWindow >
+        <p> สถานีวงศ์สว่าง </p>
+      </InfoWindow>}
+    </Marker>
+
+    {/* dic = {"roadname": [path, color], "roadname2" : [path2, color2]}
+    <Polyline 
       path={dic["roadname"][0]}
       options={{
         strokeColor: dic["roadname"][1],
@@ -43,7 +59,6 @@ const MyMapComponent = compose(
         strokeWeight: 3
       }}
     /> */}
-    //
 
     <Polyline 
       path={[{ lat: 13.81878, lng: 100.5138 }, { lat: 13.81843, lng: 100.515 }, { lat: 13.81807, lng: 100.5155 }, { lat: 13.81772, lng: 100.5158 }, { lat: 13.81753, lng: 100.51598 }, 
@@ -145,8 +160,6 @@ class MyFancyComponent extends React.PureComponent {
   render() {
     return (
       <MyMapComponent
-        isMarkerShown={this.state.isMarkerShown}
-        onMarkerClick={this.handleMarkerClick}
       />
     )
   }

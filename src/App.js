@@ -139,14 +139,11 @@ class App extends React.Component {
                 </Input>
                 </FormGroup>
                 <Button size="lg" type="submit" color="success" value="Submit"> ค้นหา </Button>
-                {/* {this.state.time} */}
               </Form>
             </div>
             </ul>
           </nav>
           {this.state.showMaps}
-          
-          {/* {this.state.time} */}
         </main>
       </div>
     );
