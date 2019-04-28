@@ -5,7 +5,6 @@ import { compose, withProps, withStateHandlers } from "recompose";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, TrafficLayer, Polyline, InfoWindow } from "react-google-maps";
 
 const show_time = 0;
-const a = 0;
 const MyMapComponent = compose(
   withProps({
     googleMapURL:
