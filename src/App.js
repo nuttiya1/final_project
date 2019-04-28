@@ -10,7 +10,7 @@ import MapKra from './components/Map/MapKra';
 import MapBang from './components/Map/MapBang';
 import { Button, Label, FormGroup, Input, Form } from 'reactstrap';
 
-const url="http://127.0.0.1:5000/road_jf";
+// const url="http://127.0.0.1:5000/traval_time/des=wongsawang";
 
 class App extends React.Component {
   // state = {
@@ -20,7 +20,8 @@ class App extends React.Component {
     super(props);
     this.state = {location: '',
                   time: '',
-                  showMaps: '',
+                  showMaps: <MapDefault/>,
+                  time_drive: '',
                   status: null};
     this.handleChangeLocation = this.handleChangeLocation.bind(this);
     this.handleChangeTime = this.handleChangeTime.bind(this);
@@ -28,18 +29,36 @@ class App extends React.Component {
     this.loadtime = 0; // test
   }
   
-  componentDidMount () {
-    Axios.get(url)
-      .then(res => {
-        const rrrr = res.data;
-        console.log(rrrr["219+00638"][22021][1])
-        this.setState({status: rrrr["219+00638"][22021][1]})
+  // componentDidMount () {
+  //   Axios.get(url)
+  //     .then(res => {
+  //       const rrrr = res.data;
+  //       console.log(rrrr["219+00638"][22021][1])
+  //       this.setState({status: rrrr["219+00638"][22021][1]})
         
-      })
-      .catch(error => {
-        console.log('Oops...')
-      })
-  }
+  //     })
+  //     .catch(error => {
+  //       console.log('Oops...')
+  //     })
+  // }
+
+  // componentDidMount () {
+  //   Axios.get(url)
+  //     .then(res => {
+  //       const time_drive = res.data;
+  //       console.log("receive time: ",time_drive.time)
+  //       this.setState({time_drive: time_drive.time})
+  //       // alert("Total Time Drive: ", time_drive.time)
+  //       // console.log("show time: ", this.state.time)
+  //     })
+  //     .catch(error => {
+  //       console.log('Oops...')
+  //     })
+  // }
+  
+  // componentWillMount(){
+    
+  // }
   
   
   handleChangeLocation(event){
@@ -54,6 +73,7 @@ class App extends React.Component {
     alert('text find: ' + this.state.time)
     if (this.state.location == "สถานีวงศ์สว่าง"){
       this.setState({showMaps: <MapWong />})
+      // console.log("show time: ", this.state.time_drive)
     }
     else if (this.state.location == "สถานีกระทรวงสาธารณสุข"){
       this.setState({showMaps: <MapKra />})
@@ -66,6 +86,7 @@ class App extends React.Component {
     }
     // this.setState({location: ''});
     event.preventDefault();
+    
   }
 
   // drawerToggleClickHandler = () => {
@@ -89,12 +110,12 @@ class App extends React.Component {
 
     return (
       <div style={{height: '100%'}}>
-        {/* <Toolbar /> */}
+        <Toolbar />
         {/* <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
         <SideDrawer show={this.state.sideDrawerOpen} />        
         {backdrop} */}
         <main style={{marginTop: '61px'}} >
-          {/* <nav className={form}>
+          <nav className={form}>
             <ul>
             <div>
               <Form onSubmit={this.handleSubmit}>
@@ -118,13 +139,14 @@ class App extends React.Component {
                 </Input>
                 </FormGroup>
                 <Button size="lg" type="submit" color="success" value="Submit"> ค้นหา </Button>
+                {/* {this.state.time} */}
               </Form>
             </div>
             </ul>
-          </nav> */}
+          </nav>
           {this.state.showMaps}
           
-          {/* {this.state.status} */}
+          {/* {this.state.time} */}
         </main>
       </div>
     );
