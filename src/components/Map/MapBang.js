@@ -2,7 +2,7 @@ import _ from "lodash";
 import React from "react";
 import Axios from 'axios';
 import { compose, withProps, withStateHandlers } from "recompose";
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, Polyline, InfoWindow } from "react-google-maps";
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, TrafficLayer, Polyline, InfoWindow } from "react-google-maps";
 
 const url="http://127.0.0.1:5000/traval_time/des=bangpo";
 
@@ -54,9 +54,9 @@ class MyFancyComponent extends React.PureComponent {
       withGoogleMap,
       
     )(props => (
-      <GoogleMap defaultZoom={15} defaultCenter={{ lat: 13.8178455, lng: 100.5138012 }}>
+      <GoogleMap defaultZoom={15} defaultCenter={{ lat: 13.8138455, lng: 100.5138012 }}>
     
-        <Marker position={{ lat: 13.818851, lng: 100.5138 }} >
+        <Marker position={{ lat: 13.818851, lng: 100.5138 }} onClick={props.onToggleOpen1}>
           {props.isOpen1 && <InfoWindow >
             <h6> มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ </h6>
           </InfoWindow>}
@@ -66,7 +66,7 @@ class MyFancyComponent extends React.PureComponent {
             <p> {this.state.time_drive} นาที </p>
           </InfoWindow>}
         </Marker>
-        <Marker position={{ lat: 13.806172, lng: 100.5215 }} >
+        <Marker position={{ lat: 13.806172, lng: 100.5215 }} onClick={props.onToggleOpen3}>
           {props.isOpen3 && <InfoWindow >
             <h6> สถานีบางโพ </h6>
           </InfoWindow>}
