@@ -2,7 +2,7 @@ import _ from "lodash";
 import React from "react";
 import Axios from 'axios';
 import { compose, withProps, withStateHandlers } from "recompose";
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, TrafficLayer, Polyline, InfoWindow } from "react-google-maps";
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, Polyline, InfoWindow } from "react-google-maps";
 
 const url="http://127.0.0.1:5000/traval_time/des=krathungsataranasuk";
 
