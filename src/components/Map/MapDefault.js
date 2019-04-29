@@ -3,11 +3,19 @@ import React from "react";
 import { compose, withProps, withStateHandlers } from "recompose";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
 
-const time_drive = 0;
-const MyMapComponent = compose(
+const show_time = 0;
+class MyFancyComponent extends React.PureComponent {
+  constructor(props){
+    super(props);
+    this.state = {isMarkerShown: false};
+  }
+
+  render() {
+
+    const MyMapComponent = compose(
   withProps({
     googleMapURL:
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyDgGFKEyZk4AkWi-e-BbY2cOHDouvaZv74&v=3.exp&libraries=geometry,drawing,places",
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyBcAqqzyYL6pWtH1HdJfLEhLzKjwUHU1Os&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `690px`}} />,
     mapElement: <div style={{ height: `100%` }} />
@@ -29,39 +37,15 @@ const MyMapComponent = compose(
 
     <Marker position={{ lat: 13.818851, lng: 100.5138 }} onClick={props.onToggleOpen}>
       {props.isOpen && <InfoWindow >
-        <p><b> มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ </b></p>
+        <h6> มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ </h6>
       </InfoWindow>}
     </Marker>
 
   </GoogleMap>
 ));
 
-class MyFancyComponent extends React.PureComponent {
-  state = {
-    isMarkerShown: false,
-  }
-
-  componentDidMount() {
-    this.delayedShowMarker()
-  }
-
-  delayedShowMarker = () => {
-    setTimeout(() => {
-      this.setState({ isMarkerShown: true })
-    }, 3000)
-  }
-
-  handleMarkerClick = () => {
-    this.setState({ isMarkerShown: false })
-    this.delayedShowMarker()
-  }
-
-  render() {
     return (
-      <MyMapComponent
-        isMarkerShown={this.state.isMarkerShown}
-        onMarkerClick={this.handleMarkerClick}
-      />
+      <MyMapComponent />
     )
   }
 }
