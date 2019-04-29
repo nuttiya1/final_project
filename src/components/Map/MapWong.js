@@ -36,7 +36,7 @@ class MyFancyComponent extends React.PureComponent {
         mapElement: <div style={{ height: `100%` }} />
       }),
       withStateHandlers(() => ({
-        isOpen1: true,
+        isOpen1: false,
         isOpen2: true,
         isOpen3: true
       }), {
