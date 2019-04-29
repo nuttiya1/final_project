@@ -54,14 +54,14 @@ class MyFancyComponent extends React.PureComponent {
       withGoogleMap,
       
     )(props => (
-      <GoogleMap defaultZoom={14} defaultCenter={{ lat: 13.86, lng: 100.5138012 }}>
+      <GoogleMap defaultZoom={14} defaultCenter={{ lat: 13.84, lng: 100.5138012 }}>
     
-        <Marker position={{ lat: 13.818851, lng: 100.5138 }} onClick={props.onToggleOpen1}>
+        <Marker position={{ lat: 13.818851, lng: 100.5138 }} onClick={props.onToggleOpen1} >
           {props.isOpen1 && <InfoWindow >
             <h6> มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ </h6>
           </InfoWindow>}
         </Marker>
-        <Marker defaultVisible={false} position={{ lat: 13.817088, lng: 100.506515 }} onClick={props.onToggleOpen2}>
+        <Marker defaultVisible={false} position={{ lat: 13.836257, lng: 100.505132 }} onClick={props.onToggleOpen2}>
           {props.isOpen2 && <InfoWindow >
             <p> {this.state.time_drive} นาที </p>
           </InfoWindow>}
