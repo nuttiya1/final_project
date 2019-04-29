@@ -36,7 +36,7 @@ class MyFancyComponent extends React.PureComponent {
         mapElement: <div style={{ height: `100%` }} />
       }),
       withStateHandlers(() => ({
-        isOpen1: true,
+        isOpen1: false,
         isOpen2: true,
         isOpen3: true
       }), {
@@ -54,7 +54,7 @@ class MyFancyComponent extends React.PureComponent {
       withGoogleMap,
     )(props => (
       
-      <GoogleMap defaultZoom={15} defaultCenter={{ lat: 13.8228455, lng: 100.5138012 }}>
+      <GoogleMap defaultZoom={15} defaultCenter={{ lat: 13.8258455, lng: 100.5138012 }}>
     
         <Marker position={{ lat: 13.818851, lng: 100.5138 }} onClick={props.onToggleOpen1}>
           {props.isOpen1 && <InfoWindow >
