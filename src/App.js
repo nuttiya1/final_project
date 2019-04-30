@@ -70,7 +70,7 @@ class App extends React.Component {
   }
 
   handleSubmit(event){
-    alert('text find: ' + this.state.time)
+    // alert('text find: ' + this.state.time)
     if (this.state.location == "สถานีวงศ์สว่าง"){
       this.setState({showMaps: <MapWong />})
       // console.log("show time: ", this.state.time_drive)
