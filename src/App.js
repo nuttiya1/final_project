@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import './App.css'
 import MapDefault from './components/Map/MapDefault';
-import MapWong from './components/Map/MapWong';
-import MapKra from './components/Map/MapKra';
-import MapBang from './components/Map/MapBang';
-import { Button, Label, FormGroup, Input, Form } from 'reactstrap';
+import MapWong5 from './components/Map/MapWong/MapWong5';
+import MapWong15 from './components/Map/MapWong/MapWong15';
+import MapWong30 from './components/Map/MapWong/MapWong30';
+import MapWong45 from './components/Map/MapWong/MapWong45';
+import MapWong60 from './components/Map/MapWong/MapWong60';
+import MapKra5 from './components/Map/MapKra/MapKra5';
+import MapKra15 from './components/Map/MapKra/MapKra15';
+import MapKra30 from './components/Map/MapKra/MapKra30';
+import MapKra45 from './components/Map/MapKra/MapKra45';
+import MapKra60 from './components/Map/MapKra/MapKra60';
+import MapBang5 from './components/Map/MapBang/MapBang5';
+import MapBang15 from './components/Map/MapBang/MapBang15';
+import MapBang30 from './components/Map/MapBang/MapBang30';
+import MapBang45 from './components/Map/MapBang/MapBang45';
+import MapBang60 from './components/Map/MapBang/MapBang60';
+import { Button, FormGroup, Input, Form } from 'reactstrap';
 
 // const url="http://127.0.0.1:5000/traval_time/des=wongsawang";
 
@@ -72,14 +83,56 @@ class App extends React.Component {
   handleSubmit(event){
     // alert('text find: ' + this.state.time)
     if (this.state.location == "สถานีวงศ์สว่าง"){
-      this.setState({showMaps: <MapWong />})
+      if (this.state.time == "5"){
+        this.setState({showMaps: <MapWong5 />})
+      }
+      else if (this.state.time == "15"){
+        this.setState({showMaps: <MapWong15 />})
+      }
+      else if (this.state.time == "30"){
+        this.setState({showMaps: <MapWong30 />})
+      }
+      else if (this.state.time == "45"){
+        this.setState({showMaps: <MapWong45 />})
+      }
+      else if (this.state.time == "60"){
+        this.setState({showMaps: <MapWong60 />})
+      }
       // console.log("show time: ", this.state.time_drive)
     }
     else if (this.state.location == "สถานีกระทรวงสาธารณสุข"){
-      this.setState({showMaps: <MapKra />})
+      if (this.state.time == "5"){
+        this.setState({showMaps: <MapKra5 />})
+      }
+      else if (this.state.time == "15"){
+        this.setState({showMaps: <MapKra15 />})
+      }
+      else if (this.state.time == "30"){
+        this.setState({showMaps: <MapKra30 />})
+      }
+      else if (this.state.time == "45"){
+        this.setState({showMaps: <MapKra45 />})
+      }
+      else if (this.state.time == "60"){
+        this.setState({showMaps: <MapKra60 />})
+      }
     }
     else if (this.state.location == "สถานีบางโพ"){
-      this.setState({showMaps: <MapBang />})
+      if (this.state.time == "5"){
+        this.setState({showMaps: <MapBang5 />})
+      }
+      else if (this.state.time == "15"){
+        this.setState({showMaps: <MapBang15 />})
+      }
+      else if (this.state.time == "30"){
+        this.setState({showMaps: <MapBang30 />})
+      }
+      else if (this.state.time == "45"){
+        this.setState({showMaps: <MapBang45 />})
+      }
+      else if (this.state.time == "60"){
+        this.setState({showMaps: <MapBang60 />})
+      }
     }
     else{
       this.setState({showMaps: <MapDefault />})

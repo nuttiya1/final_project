@@ -86,7 +86,7 @@ class MyFancyComponent extends React.PureComponent {
           path={[{ lat: 13.81878, lng: 100.5138 }, { lat: 13.81843, lng: 100.515 }, { lat: 13.81807, lng: 100.5155 }, { lat: 13.81772, lng: 100.5158 }, { lat: 13.81753, lng: 100.51598 }, 
             { lat: 13.81745, lng: 100.51615 }, { lat: 13.817445, lng: 100.51631 }, { lat: 13.81749, lng: 100.516465 }]}
           options={{
-            strokeColor: "Red",
+            strokeColor: "Black",
             strokeOpacity: 1,
             strokeWeight: 3
           }}
@@ -94,7 +94,7 @@ class MyFancyComponent extends React.PureComponent {
         <Polyline 
           path={[{ lat: 13.81749, lng: 100.516465 }, { lat: 13.81976, lng: 100.518852}]}
           options={{
-            strokeColor: "Green",
+            strokeColor: "Black",
             strokeOpacity: 1,
             strokeWeight: 3
         }}
@@ -110,7 +110,7 @@ class MyFancyComponent extends React.PureComponent {
         <Polyline 
           path={[{ lat: 13.822128, lng: 100.521489 }, { lat: 13.825783, lng: 100.5255 }]}
           options={{
-            strokeColor: "Yellow",
+            strokeColor: "Black",
             strokeOpacity: 1,
             strokeWeight: 3
         }}
@@ -118,7 +118,7 @@ class MyFancyComponent extends React.PureComponent {
         <Polyline 
           path={[{ lat: 13.825783, lng: 100.5255 }, { lat: 13.82835, lng: 100.5283 }]}
           options={{
-            strokeColor: "Red",
+            strokeColor: "Black",
             strokeOpacity: 1,
             strokeWeight: 3
         }}
@@ -126,7 +126,7 @@ class MyFancyComponent extends React.PureComponent {
         <Polyline 
           path={[{ lat: 13.82835, lng: 100.5283 }, { lat: 13.82972, lng: 100.5266 }]}
           options={{
-            strokeColor: "Yellow",
+            strokeColor: "Black",
             strokeOpacity: 1,
             strokeWeight: 3
         }}

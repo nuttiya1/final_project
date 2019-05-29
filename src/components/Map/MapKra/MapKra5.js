@@ -80,7 +80,7 @@ class MyFancyComponent extends React.PureComponent {
             { lat: 13.83609, lng: 100.504938 }, { lat: 13.836456, lng: 100.505595 }, { lat: 13.836679, lng: 100.50595 }, { lat: 13.8374, lng: 100.506813 }, { lat: 13.838057, lng: 100.50738 }, 
             { lat: 13.83933, lng: 100.508339 }, { lat: 13.844165, lng: 100.5117 }, { lat: 13.845813, lng: 100.512814 }, { lat: 13.846494, lng: 100.513231 }, { lat: 13.848618, lng: 100.514667 }]}
           options={{
-            strokeColor: "orange",
+            strokeColor: "red",
             strokeOpacity: 1,
             strokeWeight: 3
           }}
