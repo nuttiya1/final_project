@@ -63,7 +63,7 @@ class MyFancyComponent extends React.PureComponent {
         </Marker>
         <Marker defaultVisible={false} position={{ lat: 13.814555, lng: 100.521 }} onClick={props.onToggleOpen2}>
           {props.isOpen2 && <InfoWindow >
-            <p> {this.state.time_drive} นาที </p>
+            <p> {this.state.time_drive} 22 นาที </p>
           </InfoWindow>}
         </Marker>
         <Marker position={{ lat: 13.806172, lng: 100.5215 }} onClick={props.onToggleOpen3}>
@@ -71,16 +71,82 @@ class MyFancyComponent extends React.PureComponent {
             <h6> สถานีบางโพ </h6>
           </InfoWindow>}
         </Marker>
-    
+        
         <Polyline 
-          path={[{ lat: 13.81878, lng: 100.5138 }, { lat: 13.818443, lng: 100.514888 }, { lat: 13.818289, lng: 100.515065 }, { lat: 13.818121, lng: 100.515151 }, { lat: 13.817971, lng: 100.515172 }, 
-            { lat: 13.817696, lng: 100.515085 }, { lat: 13.817, lng: 100.514739 }, { lat: 13.816841, lng: 100.514701 }, { lat: 13.816462, lng: 100.514705 }, { lat: 13.816349, lng: 100.514731 }, 
-            { lat: 13.816154, lng: 100.514797 }, { lat: 13.815945, lng: 100.514937 }, { lat: 13.815762, lng: 100.515102 }, { lat: 13.815592, lng: 100.515324 }, { lat: 13.81521, lng: 100.51608 }, 
-            { lat: 13.815041, lng: 100.516302 }, { lat: 13.81487, lng: 100.516503 }, { lat: 13.813879, lng: 100.517412 }, { lat: 13.813774, lng: 100.5176 }, { lat: 13.813765, lng: 100.51777 }, 
-            { lat: 13.814524, lng: 100.520093 }, { lat: 13.814747, lng: 100.520902 }, { lat: 13.814727, lng: 100.520992 }, { lat: 13.814676, lng: 100.521037 }, { lat: 13.813456, lng: 100.521405 }, 
-            { lat: 13.813243, lng: 100.521408 }, { lat: 13.813, lng: 100.521483 }, { lat: 13.812219, lng: 100.521742 }, { lat: 13.811809, lng: 100.521794 }, { lat: 13.811368, lng: 100.521807 }, 
-            { lat: 13.810084, lng: 100.521745 }, { lat: 13.80935, lng: 100.521711 }, { lat: 13.809088, lng: 100.521673 }, { lat: 13.808737, lng: 100.521645 }, { lat: 13.808491, lng: 100.521649 }, 
-            { lat: 13.8062, lng: 100.521569 }]}
+          path={[{ lat: 13.81878, lng: 100.5138 }, { lat: 13.818443, lng: 100.514888 }, { lat: 13.818289, lng: 100.515065 }, { lat: 13.818121, lng: 100.515151 }, { lat: 13.817971, lng: 100.515172 }]}
+          options={{
+            strokeColor: "yellow",
+            strokeOpacity: 1,
+            strokeWeight: 3
+          }}
+        />
+        <Polyline 
+          path={[{ lat: 13.817971, lng: 100.515172 }, { lat: 13.817696, lng: 100.515085 }, { lat: 13.817, lng: 100.514739 }, { lat: 13.816841, lng: 100.514701 }, { lat: 13.816462, lng: 100.514705 }, { lat: 13.816349, lng: 100.514731 }]}
+          options={{
+            strokeColor: "green",
+            strokeOpacity: 1,
+            strokeWeight: 3
+          }}
+        />
+        <Polyline 
+          path={[{ lat: 13.816349, lng: 100.514731 }, { lat: 13.816154, lng: 100.514797 }, { lat: 13.815945, lng: 100.514937 }, { lat: 13.815762, lng: 100.515102 }, { lat: 13.815592, lng: 100.515324 }]}
+          options={{
+            strokeColor: "green",
+            strokeOpacity: 1,
+            strokeWeight: 3
+          }}
+        />
+        <Polyline 
+          path={[{ lat: 13.815592, lng: 100.515324 }, { lat: 13.81521, lng: 100.51608 }, { lat: 13.815041, lng: 100.516302 }, { lat: 13.81487, lng: 100.516503 }]}
+          options={{
+            strokeColor: "green",
+            strokeOpacity: 1,
+            strokeWeight: 3
+          }}
+        />
+        <Polyline 
+          path={[{ lat: 13.81487, lng: 100.516503 }, { lat: 13.813879, lng: 100.517412 }, { lat: 13.813774, lng: 100.5176 }, { lat: 13.813765, lng: 100.51777 }, { lat: 13.814524, lng: 100.520093 }]}
+          options={{
+            strokeColor: "green",
+            strokeOpacity: 1,
+            strokeWeight: 3
+          }}
+        />
+        <Polyline 
+          path={[{ lat: 13.814524, lng: 100.520093 }, { lat: 13.814747, lng: 100.520902 }]}
+          options={{
+            strokeColor: "red",
+            strokeOpacity: 1,
+            strokeWeight: 3
+          }}
+        />
+        <Polyline 
+          path={[{ lat: 13.814747, lng: 100.520902 }, { lat: 13.814727, lng: 100.520992 }, { lat: 13.814676, lng: 100.521037 }, { lat: 13.813456, lng: 100.521405 }, 
+            { lat: 13.813243, lng: 100.521408 }]}
+          options={{
+            strokeColor: "yellow",
+            strokeOpacity: 1,
+            strokeWeight: 3
+          }}
+        />
+        <Polyline 
+          path={[{ lat: 13.813243, lng: 100.521408 }, { lat: 13.813, lng: 100.521483 }, { lat: 13.812219, lng: 100.521742 }, { lat: 13.811809, lng: 100.521794 }]}
+          options={{
+            strokeColor: "green",
+            strokeOpacity: 1,
+            strokeWeight: 3
+          }}
+        />
+        <Polyline 
+          path={[{ lat: 13.811809, lng: 100.521794 }, { lat: 13.811368, lng: 100.521807 }, { lat: 13.810084, lng: 100.521745 }, { lat: 13.80935, lng: 100.521711 }, { lat: 13.809088, lng: 100.521673 }, { lat: 13.808737, lng: 100.521645 }, { lat: 13.808491, lng: 100.521649 }]}
+          options={{
+            strokeColor: "yellow",
+            strokeOpacity: 1,
+            strokeWeight: 3
+          }}
+        />
+        <Polyline 
+          path={[{ lat: 13.808491, lng: 100.521649 }, { lat: 13.8062, lng: 100.521569 }]}
           options={{
             strokeColor: "yellow",
             strokeOpacity: 1,

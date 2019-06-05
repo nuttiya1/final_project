@@ -101,9 +101,6 @@ class App extends React.Component {
       else if (this.state.time == "45"){
         this.setState({showMaps: <MapWong45 />})
       }
-      else if (this.state.time == "60"){
-        this.setState({showMaps: <MapWong60 />})
-      }
       // console.log("show time: ", this.state.time_drive)
     }
     else if (this.state.location == "สถานีกระทรวงสาธารณสุข"){
@@ -119,9 +116,6 @@ class App extends React.Component {
       else if (this.state.time == "45"){
         this.setState({showMaps: <MapKra45 />})
       }
-      else if (this.state.time == "60"){
-        this.setState({showMaps: <MapKra60 />})
-      }
     }
     else if (this.state.location == "สถานีบางโพ"){
       if (this.state.time == "5"){
@@ -136,9 +130,6 @@ class App extends React.Component {
       else if (this.state.time == "45"){
         this.setState({showMaps: <MapBang45 />})
       }
-      else if (this.state.time == "60"){
-        this.setState({showMaps: <MapBang60 />})
-      }
     }
     else if (this.state.location == "แสดงทั้งหมด"){
       if (this.state.time == "5"){
@@ -152,9 +143,6 @@ class App extends React.Component {
       }
       else if (this.state.time == "45"){
         this.setState({showMaps: <MapAll45 />})
-      }
-      else if (this.state.time == "60"){
-        this.setState({showMaps: <MapAll60 />})
       }
     }
     else{
@@ -212,7 +200,6 @@ class App extends React.Component {
                   <option value="15">15 นาที</option>
                   <option value="30">30 นาที</option>
                   <option value="45">45 นาที</option>
-                  <option value="60">60 นาที</option>
                 </Input>
                 </FormGroup>
                 <Button size="lg" type="submit" color="success" value="Submit"> ค้นหา </Button>
