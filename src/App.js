@@ -4,6 +4,7 @@ import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import './App.css'
 import MapDefault from './components/Map/MapDefault';
+import MapAll from './components/Map/MapAll/MapAll5';
 import MapWong5 from './components/Map/MapWong/MapWong5';
 import MapWong15 from './components/Map/MapWong/MapWong15';
 import MapWong30 from './components/Map/MapWong/MapWong30';
@@ -19,6 +20,11 @@ import MapBang15 from './components/Map/MapBang/MapBang15';
 import MapBang30 from './components/Map/MapBang/MapBang30';
 import MapBang45 from './components/Map/MapBang/MapBang45';
 import MapBang60 from './components/Map/MapBang/MapBang60';
+import MapAll5 from './components/Map/MapAll/MapAll5';
+import MapAll15 from './components/Map/MapAll/MapAll15';
+import MapAll30 from './components/Map/MapAll/MapAll30';
+import MapAll45 from './components/Map/MapAll/MapAll45';
+import MapAll60 from './components/Map/MapAll/MapAll60';
 import { Button, FormGroup, Input, Form } from 'reactstrap';
 
 // const url="http://127.0.0.1:5000/traval_time/des=wongsawang";
@@ -134,6 +140,23 @@ class App extends React.Component {
         this.setState({showMaps: <MapBang60 />})
       }
     }
+    else if (this.state.location == "แสดงทั้งหมด"){
+      if (this.state.time == "5"){
+        this.setState({showMaps: <MapAll5 />})
+      }
+      else if (this.state.time == "15"){
+        this.setState({showMaps: <MapAll15 />})
+      }
+      else if (this.state.time == "30"){
+        this.setState({showMaps: <MapAll30 />})
+      }
+      else if (this.state.time == "45"){
+        this.setState({showMaps: <MapAll45 />})
+      }
+      else if (this.state.time == "60"){
+        this.setState({showMaps: <MapAll60 />})
+      }
+    }
     else{
       this.setState({showMaps: <MapDefault />})
     }
@@ -178,6 +201,7 @@ class App extends React.Component {
                   <option value="สถานีวงศ์สว่าง" >สถานีวงศ์สว่าง</option>
                   <option value="สถานีบางโพ">สถานีบางโพ</option>
                   <option value="สถานีกระทรวงสาธารณสุข">สถานีกระทรวงสาธารณสุข</option>
+                  <option value="แสดงทั้งหมด">แสดงทั้ง 3 สถานี</option>
                 </Input>
                 </FormGroup>
                 
