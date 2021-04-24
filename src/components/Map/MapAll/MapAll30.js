@@ -15,7 +15,7 @@ class MyFancyComponent extends React.PureComponent {
     const MyMapComponent = compose(
   withProps({
     googleMapURL:
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyBcAqqzyYL6pWtH1HdJfLEhLzKjwUHU1Os&v=3.exp&libraries=geometry,drawing,places",
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyD7NoheJDuuksn2EkouZmBED4NsMWw42VY=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `690px`}} />,
     mapElement: <div style={{ height: `100%` }} />
